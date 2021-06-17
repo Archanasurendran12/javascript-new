@@ -1,13 +1,14 @@
-var arr=[3,4,5,6]
-var sum=0;
+var arr=[4,5,6]
+op=[];
+var total=0;
 for(let num of arr){
-    sum+=num;
+    total=total+num;
 }
-console.log(sum);
+console.log(total);
 
-var op=[]
+
 for(let num of arr){
-    let res=sum-num
+    let res=total-num
     op.push(res)
 }
 console.log(op);
