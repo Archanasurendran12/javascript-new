@@ -33,4 +33,28 @@ for(let data of temperature){
     }
 }
 console.log(weather);
-   
+
+
+ // sort weather according to temparature desc
+
+var weather={}
+for(let data of temparature){
+    let district=data["district"]; //true
+    let temp=data["temperature"]; //27
+    if(district in weather){
+        let old_temp=weather[district];//25
+        if(old_temp<temp){
+            weather[district]=temp
+        }
+    }
+
+     else{
+    weather[district]=temp;
+    }
+}
+console.log(weather);
+
+function sortByTemp(){
+    return Object.entries(data).sort((dist1,dist2)=>dis2[1]-dist1[1])
+}
+console.log(sortByTemp(weather));
