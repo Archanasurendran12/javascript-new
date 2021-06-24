@@ -27,5 +27,71 @@ var below_fifty=products.filter(item=>item.mrp < 50)
 console.log(below_fifty);
 
 // print all products available in ranger of 30 - 50
+
+var range_prdt=products.filter(item=>item.mrp>= 30 & item.mrp<=50)
 // print out of stock products
+
+var range_prdt=products.filter(item=>item.aval_qty==0)
 // ar arr=[4,3,2,7,8,9] o/p 3,2,1,8,9,10 array method 
+
+var arr=[4,3,2,7,8,9]
+var op=arr.map(num=>num>5?num+1:num-1)
+
+//total
+
+var arr=[4,3,2,7,8,9]
+var total=arr.reduce((num1,num2)=>num1+num2)
+console.log(total);
+
+//maximum
+
+var max=arr.reduce((num1,num2)=>num1>num2?num1:num2)
+console.log(max);
+
+//minimum
+
+var min=arr.reduce((num1,num2)=>num1>num2?num2:num1)
+console.log(min);
+
+//print costly products
+
+var costly_product=products.reduce((item1,item2)=>item1.mrp>item2.mrp?item1:item2)
+console.log(costly_product);
+
+//low cost products
+
+var low_cost=products.reduce((item1,item2)=>item1.mrp>item2.mrp?item2:item1)
+console.log(low_cost);
+
+//sort products upon avl_qty desending order
+
+
+var srt_qty=products.sort((item1,item2)=>item1.aval_qty - item2.aval_qty)
+console.log(srt_qty);
+
+//prdct name sort
+
+var srt_qty=products.map(item=>item.name).sort()
+console.log(srt_qty);
+
+//searching for a product potato
+
+var srch=products.find(item=>item.name=="potatto")
+console.log(srch);
+
+// some
+
+var is_aval_price=products.some(item=>item.mrp <= 30)
+console.log(is_aval_price);
+
+var is_aval_price=products.some(item=>item.mrp >= 30)
+console.log(is_aval_price);
+
+// sort product upon avl_qty desending using foreach
+
+products.sort((item1,item2)=>item1.aval_qty - item2.aval_qty).forEach(item=>{
+    if(item.aval_qty>0){
+        console.log(item);
+    }
+})
+
